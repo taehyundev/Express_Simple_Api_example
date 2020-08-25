@@ -15,5 +15,5 @@ https://ing-yeo.net/2020/02/study-nodejs-create-simple-restful-api-server/
 
 * develop branch : 기본적으로 작업을 할 branch 
 
-* branch 생성
-https://backlog.com/git-tutorial/kr/stepup/stepup2_3.html
+* branch 생성(test)
+https://backlog.com/git-tutorial/kr/stepup/stepup2_3.html 
