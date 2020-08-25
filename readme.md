@@ -14,3 +14,6 @@ https://ing-yeo.net/2020/02/study-nodejs-create-simple-restful-api-server/
 * master branch : init 셋팅과 결과물 올림
 
 * develop branch : 기본적으로 작업을 할 branch 
+
+* branch 생성
+https://backlog.com/git-tutorial/kr/stepup/stepup2_3.html
