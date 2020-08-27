@@ -1,7 +1,8 @@
 var express = require('express')
 var router = express.Router()
-var api_post = require('./api/post/post')
 
-router.use('/api/post',api_post)
+router.post('/',(req,res,next)=>{
+    res.json({"status":"success"})
+})
 
 module.exports = router
