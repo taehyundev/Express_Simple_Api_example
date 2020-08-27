@@ -1,8 +1,8 @@
 var express = require('express')
 var router = express.Router()
+var api_post = require('./api/test/test1')
 
-router.get('/',(req,res)=>{
-    res.send("<h1>default setting</h1>")
-})
+//route
+router.use('/api/test/test1',api_post)
 
 module.exports = router
