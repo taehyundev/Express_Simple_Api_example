@@ -1,4 +1,3 @@
-
 var config = {
     port: 3000,
     mysql: {

@@ -20,3 +20,6 @@ https://backlog.com/git-tutorial/kr/stepup/stepup2_3.html
 
 # 2020-08-27
 * JSON형태의 데이터를 보내면 받아서 DB로 변경하는 api - post요청(Postman으로 실험 완료)
+
+# 2020-08-28
+* url의 주소에 따라 sql 정보를 받아옴 - get요청(Postman으로 실험 완료)
