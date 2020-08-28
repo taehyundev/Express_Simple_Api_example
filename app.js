@@ -1,8 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql')
-
-//middle ware
 var mid = require("./router/mid")
 var app = express()
 
