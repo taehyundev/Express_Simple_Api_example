@@ -1,6 +1,7 @@
 var express = require('express')
 var async = require("async")
-var conn = require('../../../model/db_conn')
+var conn = require('../../model/db_conn')
+const e = require('express')
 
 var router = express.Router()
 
@@ -81,5 +82,48 @@ router.post('/',(req,res)=>{
         }
     )
     
+})
+
+//PUT update
+router.put("/:id",(req,res)=>{
+    var id;
+    var title;
+    var contents;
+    var result = {}
+    async.waterfall([
+        function(callback){
+            id = parseInt(req.params.id);
+            title = req.body.title;
+            contents = req.body.contents;
+            callback();
+        },
+        function(callback){     
+            if(title == undefined || contents == undefined){
+                callback(new Error("error"))
+            }else{
+                conn.query(`update testtable set title='${title}', contents = '${contents}' WHERE no = ${id}`,(err,rows)=>{
+                   // console.log(rows)
+                    if(err){
+                        callback(new Error("qq error"))
+                    }else{
+                        callback()
+                    }
+                })
+            }
+        }],
+        function(err){
+            if(err){
+                res.status(400)
+                result.message = err.stack
+                
+            }else{
+                res.status(200)
+                result.title = title
+                result.contents = contents 
+            }
+            
+            result.status = res.statusCode 
+            res.json(result)
+        })
 })
 module.exports = router
