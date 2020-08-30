@@ -1,0 +1,41 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="localhost:3000/api/post_test" method="POST">
+        <input class="a" type="text" name="title"/>
+        <input class="b" type="text" name="contents"/>
+        <input type="submit" value="send">
+    </form>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        document.querySelector("form").addEventListener("submit",()=>{
+            let param1 = $(".a").val(); // 서버로 보내야할 데이터 1
+            let param2 = $(".b").val(); // 서버로 보내야할 데이터 2
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:3000/api/test1',
+                data: //Body 
+                {
+                    title: 'sparta',
+                    contents: '12345'
+                }, 
+                //header는 ajax가 기본적으로 구성을 해준다
+                success: function(response){
+                    //성공했을때 
+                    console.log(response)
+                },
+                error: function(error){
+                    //실패했을때
+                    console.log("er")
+                },
+                })
+
+        })
+   
+    </script>
+</html>
