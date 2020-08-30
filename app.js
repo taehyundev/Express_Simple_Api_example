@@ -13,5 +13,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.listen(3000, function(){
     console.log("start! express server");
 });
-
+app.use(function(req, res, next) {
+    
+    //cors 보안정책
+    res.header("Access-Control-Allow-Origin", "*"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.use(mid)

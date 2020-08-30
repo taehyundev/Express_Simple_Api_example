@@ -1,7 +1,6 @@
 var express = require('express')
 var async = require("async")
 var conn = require('../../model/db_conn')
-const e = require('express')
 
 var router = express.Router()
 
@@ -69,7 +68,7 @@ router.post('/',(req,res)=>{
             }
         }],
         function(err){
-            if(err){
+           if(err){
                 res.status(400)
                 result.message = err.stack
                 

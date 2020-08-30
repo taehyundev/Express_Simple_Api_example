@@ -30,3 +30,19 @@ https://backlog.com/git-tutorial/kr/stepup/stepup2_3.html
 # 2020-08-29
 * url의 주소에 따라 parms.no 의 정보의 no 과 매치되는 query 의 정보를 삭제 - delete요청(Postman으로 실험 완료)
     +query_increment_reset()를 제작하여 삭제시 no 번호가 중간에 비는 오점 해결
+
+# 2020-08-31
+* cors 문제해결 보안 정책 문제였음
+
+```javascript
+app.use(function(req, res, next) {
+    
+    //cors 보안정책
+    res.header("Access-Control-Allow-Origin", "*"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+// use로 헤더올리는데 현재는 * 로 해서 보안성이 약함 그 이후 next로 다음 app.use를 실행
+```
+
+* client 로 정상 작동
