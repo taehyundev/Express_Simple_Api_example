@@ -46,5 +46,10 @@ app.use(function(req, res, next) {
 ```
 
 * client 로 정상 작동
+ createConnection은 단일 컨넥션 방식이고, createPool 은 커넥션 풀 방식 여러쿼리를 병렬적으로 실행하기위해서는 Pool을 사용하는 것이 좋음(수정)
 
-* createConnection은 단일 컨넥션 방식이고, createPool 은 커넥션 풀 방식 여러쿼리를 병렬적으로 실행하기위해서는 Pool을 사용하는 것이 좋음(수정)
+* Pool Connection 방식으로 변경
+
+* dotenv 로 config 파일을 환경변수로 지정
+
+* client server폴더 나눔
